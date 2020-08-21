@@ -14,3 +14,4 @@ mod ownership_lifetimes;
 mod mutability;
 mod structs;
 mod enums;
+mod patterns;
