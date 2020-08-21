@@ -1,8 +1,13 @@
+const PI: f32 = 3.16;
+const MAX_POINTS: u32 = 100_000;
+
 fn err() {
 	let _x = 5;
 	// _x = 6; // error!
 }
 
+#[allow(unused_variables)]
+#[allow(unused_assignments)]
 fn ok() {
 	let mut x = 5;
 	x = 6; // no problem!
@@ -49,6 +54,13 @@ fn emulate_field_mutability() {
 	point.y.set(7);
 	
 	println!("y: {:?}", point.y);
+}
+
+fn shadowing() {
+	let _spaces = "   ";
+	let _spaces = _spaces.len();
+	// different variable, so changing type is allowed
+	
 }
 
 

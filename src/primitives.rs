@@ -21,9 +21,13 @@ fn primitives() {
 	let _floating: f32; //f64
 	
 	// arrays
+	// If you’re unsure whether to use an array or
+	// a vector, you should probably use a vector
 	let _a = [1, 2, 3];
 	let a:[i8; 2] = [3, 2];
 	a[1];
+	
+	let _a = ["foo"; 10]; // 10 foos
 	
 	// slicing
 	let a = [0, 1, 2, 3, 4];

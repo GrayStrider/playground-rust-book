@@ -48,3 +48,7 @@ fn pointers() {
 	
 	let _six = f(5);
 }
+
+fn fobaro() {
+	let mut x: &str = "";
+}

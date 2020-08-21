@@ -39,6 +39,20 @@ fn loop_() {
 		break;
 		continue; // standart
 	}
+	
+	fn returns() {
+		let mut counter = 0;
+		
+		let result = loop {
+			counter += 1;
+			
+			if counter == 10 {
+				break counter * 2;
+			}
+		};
+		
+		println!("The result is {}", result);
+	}
 }
 
 fn while_() {
@@ -59,6 +73,19 @@ fn while_() {
 fn for_() {
 	for x in 0..10 {
 		println!("{}", x); // x: i32
+	}
+	
+	// reverse
+	for i in (0..3).rev() {
+		println!("{}", i)
+	}
+	
+	fn iterate() {
+		let a = [10, 20, 30, 40, 50];
+		
+		for element in a.iter() {
+			println!("the value is: {}", element);
+		}
 	}
 	
 	fn enumerate() {
