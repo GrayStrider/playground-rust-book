@@ -68,7 +68,7 @@ fn ignoring() {
 	let val = String::new();
 	
 	// use _ in a pattern to disregard the type and value
-	match val.parse() {
+	match val.parse::<String>() {
 		Ok(value) => println!("string: {}", value),
 		Err(_) => println!("failed to parse"),
 	}
@@ -111,15 +111,15 @@ fn ranges() {
 	let x = 1;
 	
 	match x {
-		n @ 1...5 => println!("one through five: {}", n),
+		n @ 1..=5 => println!("one through five: {}", n),
 		_ => println!("anything"),
 	}
 	
 	let x = '💅';
 	
 	match x {
-		'a'...'j' => println!("early letter"),
-		'k'...'z' => println!("late letter"),
+		'a'..='j' => println!("early letter"),
+		'k'..='z' => println!("late letter"),
 		_ => println!("something else"),
 	}
 }
@@ -128,7 +128,7 @@ fn bindings() {
 	let x = 1;
 	
 	match x {
-		e @ 1...5 => println!("got a range element {}", e),
+		e @ 1..=5 => println!("got a range element {}", e),
 		_ => println!("anything"),
 	}
 	

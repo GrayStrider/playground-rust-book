@@ -14,6 +14,6 @@ fn add_one(x: i32) -> i32 {
 	x + 1
 }
 
-/// You can use the rustdoc tool to generate
-/// HTML documentation from these doc comments,
-/// and also to run the code examples as tests!
+// / You can use the rustdoc tool to generate
+// / HTML documentation from these doc comments,
+// / and also to run the code examples as tests!

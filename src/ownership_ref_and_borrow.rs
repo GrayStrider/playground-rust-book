@@ -1,6 +1,6 @@
 fn hand_back() {
 	fn foo(v1: Vec<i32>, v2: Vec<i32>) -> (Vec<i32>, Vec<i32>, i32) {
-		// do stuff with v1 and v2
+		// do stuff with _v1 and _v2
 		
 		// hand back ownership, and the result of our function
 		(v1, v2, 42)
@@ -9,23 +9,23 @@ fn hand_back() {
 	let v1 = vec![1, 2, 3];
 	let v2 = vec![1, 2, 3];
 	
-	let (v1, v2, answer) = foo(v1, v2);
+	let (_v1, _v2, _answer) = foo(v1, v2);
 	
-	// can't use v1 / v2 here!
+	// can't use _v1 / _v2 here!
 }
 
 fn using_references() {
-	fn foo(v1: &Vec<i32>, v2: &Vec<i32>) -> i32 {
-		// do stuff with v1 and v2
+	fn foo(_v1: &Vec<i32>, _v2: &Vec<i32>) -> i32 {
+		// do stuff with _v1 and _v2
 		
-		// return the answer
+		// return the _answer
 		42
 	}
 	
 	let v1 = vec![1, 2, 3];
 	let v2 = vec![1, 2, 3];
 	
-	let answer = foo(&v1, &v2);
+	let _answer = foo(&v1, &v2);
 
 // we can use v1 and v2 here!
 }

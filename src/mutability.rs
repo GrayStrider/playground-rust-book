@@ -28,9 +28,9 @@ fn exterior() {
 	
 	let x = RefCell::new(42);
 	
-	let y = x.borrow_mut();
+	let _y = x.borrow_mut();
 	
-	let z = x.borrow_mut(); // will panic at runtime
+	let _z = x.borrow_mut(); // will panic at runtime
 }
 
 // Mutability is a property of either a borrow (&mut) or a binding (let mut)

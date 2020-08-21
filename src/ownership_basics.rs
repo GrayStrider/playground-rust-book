@@ -7,7 +7,7 @@ fn move_semantics() {
 }
 
 fn takes_ownership() {
-	fn take(v: Vec<i32>) {
+	fn take(_v: Vec<i32>) {
 		// what happens here isn’t important.
 	}
 	
@@ -21,7 +21,7 @@ fn takes_ownership() {
 fn copy_trait() {
 	let v = 1;
 	
-	let v2 = v;
+	let _v2 = v;
 	
 	// all primitive types implement copy trait
 	println!("v is: {}", v);

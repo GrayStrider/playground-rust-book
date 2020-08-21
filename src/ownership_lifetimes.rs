@@ -1,10 +1,10 @@
 fn implicit() {
-	fn foo(x: &i32) {}
+	fn foo(_x: &i32) {}
 }
 
 fn explicit() {
 	// The 'a reads ‘the lifetime a’.
-	fn bar<'a>(x: &'a i32) {}
+	// fn bar<'a>(_x: &'a i32) {}
 }
 
 fn in_structs() {
@@ -36,6 +36,6 @@ fn impl_blocks() {
 static FOO: i32 = 5;
 
 fn static_lifetime() {
-	let x: &'static str = "Hello, world.";
-	let x: &'static i32 = &FOO;
+	let _x: &'static str = "Hello, world.";
+	let _x: &'static i32 = &FOO;
 }

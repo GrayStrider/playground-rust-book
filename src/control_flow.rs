@@ -1,4 +1,4 @@
-fn IF() {
+fn if_() {
 	let x = 5;
 	
 	if x == 5 {
@@ -13,17 +13,17 @@ fn IF() {
 fn if_expression() {
 	let x = 5;
 	
-	let y = if x == 5 {
+	let _y = if x == 5 {
 		10
 	} else {
 		15
-	}; // y: i32
+	}; // _y: i32
 	
 	// Which we can (and probably should) write like this:
 	
 	let x = 5;
 	
-	let y = if x == 5 { 10 } else { 15 }; // y: i32
+	let _y = if x == 5 { 10 } else { 15 }; // _y: i32
 	
 	// This works because if is an expression.
 	// The value of the expression is the value of the last
@@ -32,6 +32,7 @@ fn if_expression() {
 }
 
 // loops
+#[allow(unreachable_code)]
 fn loop_() {
 	loop {
 		println!("only once");
@@ -98,7 +99,7 @@ fn match_() {
 	}
 	
 	// as expression
-	let number = match x {
+	let _number = match x {
 		1 => "one",
 		2 => "two",
 		3 => "three",
@@ -116,8 +117,8 @@ fn match_() {
 		}
 		
 		fn quit() { /* ... */ }
-		fn change_color(r: i32, g: i32, b: i32) { /* ... */ }
-		fn move_cursor(x: i32, y: i32) { /* ... */ }
+		fn change_color(_r: i32, _g: i32, _b: i32) { /* ... */ }
+		fn move_cursor(_x: i32, _y: i32) { /* ... */ }
 		
 		fn process_message(msg: Message) {
 			match msg {

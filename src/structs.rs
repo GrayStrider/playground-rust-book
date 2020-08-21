@@ -1,3 +1,5 @@
+use std::ops::RangeTo;
+
 /// By convention, structs begin with a capital letter and are camel cased
 struct Point {
 	x: i32,
@@ -39,18 +41,19 @@ fn spread() {
 	}
 	
 	let point = Point { x: 3, y: 4 };
-	let point3d = Point3d { xy: point, z: 0 };
+	let _point3d = Point3d { xy: point, z: 0 };
 	
+	// rust arrays have a fixed length! use vector or convert into iterable
 	let origin = [1, 2];
-	let new = [..origin, 3];
+	let _new: (RangeTo<[i32; 2]>, i32) = (..origin, 3);
 }
 
 fn tuple_struct() {
 	struct Color(i32, i32, i32);
 	struct Point(i32, i32, i32);
 	
-	let black = Color(0, 0, 0);
-	let origin = Point(0, 0, 0);
+	let _black = Color(0, 0, 0);
+	let _origin = Point(0, 0, 0);
 	
 	// Good names are important, and while values in a tuple struct
 	// can be referenced with dot notation as well, a struct gives us
@@ -73,7 +76,7 @@ fn tuple_struct() {
 fn no_members() {
 	struct Electron;
 	
-	let x = Electron;
+	let _x = Electron;
 	
 	// Such a struct is called ‘unit-like’ because it resembles
 	// the empty tuple, (), sometimes called ‘unit’. Like a

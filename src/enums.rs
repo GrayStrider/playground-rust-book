@@ -11,20 +11,20 @@ enum BoardGameTurn {
 }
 
 fn main() {
-	let x: Message = Message::Move { x: 3, y: 4 };
+	let _x: Message = Message::Move { x: 3, y: 4 };
 	
-	let y: BoardGameTurn = BoardGameTurn::Move { squares: 1 };
+	let _y: BoardGameTurn = BoardGameTurn::Move { squares: 1 };
 }
 
 fn constructor() {
-	let m = Message::Write("Hello, world".to_string());
+	let _m = Message::Write("Hello, world".to_string());
 	// is the same as
 	
 	fn foo(x: String) -> Message {
 		Message::Write(x)
 	}
 	
-	let x = foo("Hello, world".to_string());
+	let _x = foo("Hello, world".to_string());
 }
 
 fn convert() {
@@ -39,5 +39,5 @@ fn convert() {
 		.map(Message::Write)
 		.collect();
 	
-	let val = &v1[0];
+	let _val = &v1[0];
 }

@@ -15,6 +15,7 @@ fn add_one(x: i32) -> i32 {
 /// There are only two kinds of statements, and everything else is an expression.
 /// So what's the difference? Expressions return a value, and statements do not
 
+#[allow(unreachable_code)]
 fn foo(x: i32) -> i32 {
 	return x;
 	
@@ -27,9 +28,10 @@ fn diverges() -> ! {
 }
 
 /// A diverging function can be used as any type:
+#[allow(unreachable_code)]
 fn diverging_assignment() {
-	let x: i32 = diverges();
-	let x: String = diverges();
+	let _x: i32 = diverges();
+	let _x: String = diverges();
 }
 
 /// function pointers
@@ -39,10 +41,10 @@ fn plus_one(i: i32) -> i32 {
 
 fn pointers() {
 	// without type inference
-	let f: fn(i32) -> i32 = plus_one;
+	let _f: fn(i32) -> i32 = plus_one;
 
 // with type inference
 	let f = plus_one;
 	
-	let six = f(5);
+	let _six = f(5);
 }
