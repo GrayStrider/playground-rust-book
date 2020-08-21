@@ -12,3 +12,4 @@ mod ownership_basics;
 mod ownership_ref_and_borrow;
 mod ownership_lifetimes;
 mod mutability;
+mod structs;
