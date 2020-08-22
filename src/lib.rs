@@ -21,3 +21,5 @@ mod patterns;
 
 mod ownership;
 mod slicing;
+mod struct_user;
+mod struct_rectangle;
