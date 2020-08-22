@@ -28,3 +28,4 @@ mod struct_user;
 mod struct_rectangle;
 mod option;
 mod std;
+mod traits;
