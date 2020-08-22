@@ -1,1 +1,1 @@
-mod collections;
+mod vectors;
