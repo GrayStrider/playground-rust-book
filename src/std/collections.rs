@@ -31,9 +31,26 @@ fn main() {
 		println!("i: {}", i);
 	}
 	
-	let c: Vec<i32> = v.iter()
-		.map(|i| i.add(1))
-		.collect();
+	let c: Vec<i32> =
+		v.iter()
+		 .map(|i| i.add(1))
+		 .collect();
 	
 	println!("incremented v: {:?}", c);
+	
+	// store values of different types
+	
+	enum SpreadsheetCell {
+		Int(i32),
+		Float(f64),
+		Text(String),
+	}
+	
+	let row = vec![
+		SpreadsheetCell::Int(3),
+		SpreadsheetCell::Text(String::from("blue")),
+		SpreadsheetCell::Float(10.12),
+	];
+	
+	
 }
