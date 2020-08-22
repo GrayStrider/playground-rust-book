@@ -4,6 +4,14 @@ fn primitives() {
 	let _x = true;
 	let _y: bool = false;
 	
+	
+	// literal
+	let _x = "bar"; // immutable! hardcoded at compile time
+	// mutable
+	let mut mutable = String::from("hello");
+	mutable.push_str(", world");
+	
+	// char
 	let _x = 'x';
 	let _two_hearts = '💕';
 	
@@ -28,11 +36,6 @@ fn primitives() {
 	a[1];
 	
 	let _a = ["foo"; 10]; // 10 foos
-	
-	// slicing
-	let a = [0, 1, 2, 3, 4];
-	let _complete = &a[..]; // A slice containing all of the elements in a
-	let _middle = &a[1..4]; // A slice of a: only the elements 1, 2, and 3
 	
 	// tuples
 	let _x = (1, "hello");

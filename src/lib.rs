@@ -20,3 +20,4 @@ mod patterns;
 // mod index;
 
 mod ownership;
+mod slicing;
