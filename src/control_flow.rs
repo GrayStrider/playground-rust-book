@@ -31,6 +31,23 @@ fn if_expression() {
 	// An if without an else always results in () as the value.
 }
 
+fn iflet() {
+	let some_u8_value = Some(0u8);
+	
+	if let Some(3) = some_u8_value {
+		println!("three");
+	}
+	
+	// the same as
+	
+	match some_u8_value {
+		Some(3) => println!("three"),
+		_ => (),
+	}
+	
+}
+
+
 // loops
 #[allow(unreachable_code)]
 fn loop_() {
