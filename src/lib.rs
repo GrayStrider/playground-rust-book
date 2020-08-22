@@ -14,6 +14,7 @@ mod ownership_lifetimes;
 mod mutability_variables;
 mod structs;
 mod enums;
+mod enums_2;
 mod patterns;
 
 // #[path = "ownership/index.rs"]
@@ -23,3 +24,4 @@ mod ownership;
 mod slicing;
 mod struct_user;
 mod struct_rectangle;
+mod option;

@@ -156,11 +156,39 @@ fn match_() {
 			};
 		}
 		
-		process_message(Message::Quit);
 		// /*Message without variants*/ will fail at compile time
+		process_message(Message::Quit);
 	}
 }
 
-fn main() {
-
+fn coins() {
+	enum Coin {
+		Penny,
+		Nickel,
+		Dime,
+		Quarter(UsState),
+	}
+	
+	#[derive(Debug)] // so we can inspect the state in a minute
+	enum UsState {
+		Alabama,
+		Alaska,
+		// --snip--
+	}
+	
+	fn value_in_cents(coin: Coin) -> u8 {
+		match coin {
+			Coin::Penny => 1,
+			Coin::Nickel => 5,
+			Coin::Dime => 10,
+			Coin::Quarter(state) => {
+				println!("State quarter from {:?}!", state);
+				25
+			}
+		}
+	}
+	
+	value_in_cents(Coin::Quarter(UsState::Alaska));
 }
+
+fn main() {}
