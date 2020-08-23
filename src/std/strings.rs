@@ -4,36 +4,38 @@ fn main() {
 	let data = "initial contents";
 	let s = data.to_string();
 	let s = "initial contents".to_string();
-	let s = String::from("initial contents");
+	let s =  sf("initial contents");
 	// literal
 	let two_hearts = '💕'; // immutable! hardcoded in at compile time
 	let c: &'static str = "hello"; // exists for the duration of the program
+	// concat
+	let s1 =  sf("Hello, ");
+	let s2 =  sf("world!");
+	let s3 = s1 + &s2; // note s1 has been moved here and can no longer be used
+	// format
+	let s = format!("{}-{}-{}", sf("tic"), sf("tac"), sf("toe"));
 	
-	// push, mutable
+	// mutate
 	let mut s = String::new();
 	s.push_str("bar");
 	s.push('!');
 	
-	// concat
-	let s1 = String::from("Hello, ");
-	let s2 = String::from("world!");
-	let s3 = s1 + &s2; // note s1 has been moved here and can no longer be used
-	
-	
-	// format
-	let s1 = String::from("tic");
-	let s2 = String::from("tac");
-	let s3 = String::from("toe");
-	let s = format!("{}-{}-{}", s1, s2, s3);
-	
 	// indexing
 	let hello = "Здравствуйте";
-	let s = &hello[0..4];
+	let first_4 = &hello[0..4];
 	// You should use ranges to create string slices with caution,
 	// because doing so can crash your program ("not a char boundary").
+	assert_eq!(first_4, "Зд"); // 2 bytes per letter!
+	assert_eq!(hello.get(0..4), Some("Зд")); // typesafe
+	assert_eq!(hello.len(), 24);
+	assert_eq!(hello.find("й"), Some(18));
+	assert_eq!(hello.find("123"), None);
 	
 	// iteration
 	let word = "नमस्ते";
 	word.chars();
 	word.bytes();
+	
 }
+
+fn sf(s: &str) -> String { String::from(s) }

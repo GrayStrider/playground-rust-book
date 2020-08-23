@@ -1,6 +1,26 @@
 use std::ops::Add;
 
 fn main() {
+	// loop, labeled
+	fn loop_labels() {
+		'outer: for x in 0..10 {
+			'inner: for y in 5..15 {
+				if x % 2 == 0 { continue 'outer; }
+				if y % 2 == 0 { continue 'inner; }
+				println!("x: {}, y: {}", x, y);
+			}
+		}
+	}
+	
+	// match
+	let num = 2;
+	// as expression
+	let to_word = match num {
+		2 => "two",
+		_ => "some other value"
+	};
+	// can be used with enums
+	
 	// if let
 	let x = Some(0);
 	if let Some(i) = x {
@@ -22,9 +42,6 @@ fn main() {
 	let three = plus_one(2);
 	// panics, diverges
 	fn error() -> ! { panic!("Error; return ()") }
-	
-	// patterns
-	let (x, y) = (1, 2);
 	
 	// type annotations
 	let x: i8 = 0;
