@@ -1,3 +1,7 @@
+mod basics;
+mod lifetimes;
+mod ref_and_borrow;
+
 fn main() {
 	foo("hello");
 	let mut str = "lol";

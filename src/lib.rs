@@ -10,17 +10,12 @@ mod funcs;
 mod primitives;
 mod comments;
 mod control_flow;
-mod ownership_basics;
-mod ownership_ref_and_borrow;
-mod ownership_lifetimes;
+
 mod mutability_variables;
 mod structs;
 mod enums;
 mod enums_2;
 mod patterns;
-
-// #[path = "ownership/index.rs"]
-// mod index;
 
 mod ownership;
 mod slicing;
