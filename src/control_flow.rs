@@ -1,53 +1,3 @@
-fn if_() {
-	let x = 5;
-	
-	if x == 5 {
-		println!("x is five!");
-	} else if x == 6 {
-		println!("x is six!");
-	} else {
-		println!("x is not five or six :(");
-	}
-}
-
-fn if_expression() {
-	let x = 5;
-	
-	let _y = if x == 5 {
-		10
-	} else {
-		15
-	}; // _y: i32
-	
-	// Which we can (and probably should) write like this:
-	
-	let x = 5;
-	
-	let _y = if x == 5 { 10 } else { 15 }; // _y: i32
-	
-	// This works because if is an expression.
-	// The value of the expression is the value of the last
-	// expression in whichever branch was chosen.
-	// An if without an else always results in () as the value.
-}
-
-fn iflet() {
-	let some_u8_value = Some(0u8);
-	
-	if let Some(3) = some_u8_value {
-		println!("three");
-	}
-	
-	// the same as
-	
-	match some_u8_value {
-		Some(3) => println!("three"),
-		_ => (),
-	}
-	
-}
-
-
 // loops
 #[allow(unreachable_code)]
 fn loop_() {
@@ -207,5 +157,3 @@ fn coins() {
 	
 	value_in_cents(Coin::Quarter(UsState::Alaska));
 }
-
-fn main() {}

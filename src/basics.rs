@@ -1,4 +1,15 @@
+use std::ops::Add;
+
 fn main() {
+	// if let
+	let x = Some(0);
+	if let Some(i) = x {
+		println!("Not None: {:#?}", i.to_string() + "!");
+	}
+	
+	// ternary
+	let x = 5;
+	let y = if x == 5 { 10 } else { 15 };
 	
 	// functions
 	fn foo(x: i32) -> i32 { x }
@@ -6,11 +17,11 @@ fn main() {
 	// closure (arrow fn, anonimous fn)
 	let x = |x: i32| x;
 	// currying
-	let adder = |to_add: i32| move |add_to: i32| to_add + add_to;
+	let adder = |x: i32| move |y: i32| y.add(x);
 	let plus_one = adder(1);
 	let three = plus_one(2);
 	// panics, diverges
-	fn error() -> ! { panic!("Error; return ()") };
+	fn error() -> ! { panic!("Error; return ()") }
 	
 	// patterns
 	let (x, y) = (1, 2);
@@ -20,7 +31,6 @@ fn main() {
 	// "!" can be used as any type
 	fn diverges() { let any: f32 = error(); }
 	
-	
 	// mutability
 	let immutable_default = 3;
 	#[allow(unused_mut)]
@@ -28,16 +38,13 @@ fn main() {
 	
 	// shadowing, scope
 	let x = 2;
-	{
-		let x = 3; // 3
-	}
+	{ let x = 3; }
 	x; // 2
 	
 	// destructuring
 	let (x, y, z) = (1, 'c', 3.9);
 	
 	fn comments() {
-		
 		/// Adds one to the number given.
 		///
 		/// # Examples
