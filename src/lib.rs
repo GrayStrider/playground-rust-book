@@ -7,7 +7,6 @@
 
 mod basics;
 
-mod funcs;
 mod primitives;
 mod control_flow;
 

@@ -9,12 +9,17 @@ fn main() {
 	let adder = |to_add: i32| move |add_to: i32| to_add + add_to;
 	let plus_one = adder(1);
 	let three = plus_one(2);
+	// panics, diverges
+	fn error() -> ! { panic!("Error; return ()") };
 	
 	// patterns
 	let (x, y) = (1, 2);
 	
 	// type annotations
 	let x: i8 = 0;
+	// "!" can be used as any type
+	fn diverges() { let any: f32 = error(); }
+	
 	
 	// mutability
 	let immutable_default = 3;
