@@ -5,8 +5,11 @@ fn main() {
 	let s = data.to_string();
 	let s = "initial contents".to_string();
 	let s = String::from("initial contents");
+	// literal
+	let two_hearts = '💕'; // immutable! hardcoded in at compile time
+	let c: &'static str = "hello"; // exists for the duration of the program
 	
-	// push
+	// push, mutable
 	let mut s = String::new();
 	s.push_str("bar");
 	s.push('!');

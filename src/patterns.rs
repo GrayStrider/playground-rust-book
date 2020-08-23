@@ -106,7 +106,6 @@ fn reference() {
 	}
 }
 
-
 fn ranges() {
 	let x = 1;
 	
