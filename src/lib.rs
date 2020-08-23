@@ -9,7 +9,6 @@ mod basics;
 
 mod funcs;
 mod primitives;
-mod comments;
 mod control_flow;
 
 mod mutability_variables;
