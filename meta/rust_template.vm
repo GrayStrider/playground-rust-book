@@ -1,0 +1,16 @@
+#[cfg(test)]
+mod tests {
+	use super::*;
+
+	#[test]
+	fn stub() {
+		let act = $NAME();
+		let exp = false;
+		assert_eq!(act, exp);
+	}
+}
+
+fn $NAME() -> bool {
+
+	true
+}
