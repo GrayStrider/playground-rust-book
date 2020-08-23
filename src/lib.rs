@@ -14,7 +14,6 @@ mod control_flow;
 mod mutability_variables;
 mod structs;
 mod enums;
-mod enums_2;
 mod patterns;
 
 mod ownership;
