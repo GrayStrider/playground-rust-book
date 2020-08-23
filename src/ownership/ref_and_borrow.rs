@@ -52,13 +52,3 @@ fn scopes() {
 	
 	//that's mut_references requires additional scope inside
 }
-
-fn issues() {
-	let mut v = vec![1, 2, 3];
-	
-	for i in &v {
-		println!("{}", i);
-		v.push(34);
-		// We can’t modify v because it’s borrowed by the loop
-	}
-}

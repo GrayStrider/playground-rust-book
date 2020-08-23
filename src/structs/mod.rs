@@ -18,6 +18,15 @@ struct Point {
 	y: i32,
 }
 
+// store references, lifetimes required
+struct Foo<'a> {
+	x: &'a i32
+}
+
+impl<'a> Foo<'a> {
+	fn method(&self) -> &'a i32 { self.x }
+}
+
 fn mutable_pointers() {
 	struct PointRef<'a> {
 		x: &'a mut i32,

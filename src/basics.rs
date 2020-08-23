@@ -1,5 +1,6 @@
 use std::ops::Add;
 
+#[allow(unused_mut)]
 fn main() {
 	// loop, labeled
 	fn loop_labels() {
@@ -50,8 +51,11 @@ fn main() {
 	
 	// mutability
 	let immutable_default = 3;
-	#[allow(unused_mut)]
-		let mut mutable = 3;
+	let mut mutable = 3;
+	// immutable, global lifetime, requires type annotation
+	const BAR: &str = "Bar";
+	// can be mutable(unsafe to modify), global
+	static mut FOO: i32 = 5;
 	
 	// shadowing, scope
 	let x = 2;

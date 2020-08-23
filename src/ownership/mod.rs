@@ -1,5 +1,4 @@
 mod basics;
-mod lifetimes;
 mod ref_and_borrow;
 
 fn main() {

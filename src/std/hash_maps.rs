@@ -2,6 +2,7 @@
 #![allow(unused_variables)]
 
 use std::collections::HashMap;
+use std::collections::hash_map::RandomState;
 
 fn main() {
 	let mut scores = HashMap::new();
@@ -23,7 +24,7 @@ fn main() {
 	
 	println!("{:?}", scores);
 	// teams()
-	let map = count(
+	let map = word_count(
 		String::from("one one Two One three   tht tht Tht  HT"));
 	println!("{:#?}", map);
 }
@@ -61,12 +62,25 @@ fn ownership() {
 	// field_name and field_value are invalid at this point!
 }
 
-fn count(chunk: String) -> HashMap<String, u32> {
-	chunk
+fn word_count(text: String) -> HashMap<String, u32> {
+	text
 		.split_whitespace()
 		.map(|word| word.to_lowercase())
 		.fold(HashMap::new(), |mut map, word| {
 			*map.entry(word).or_insert(0) += 1;
 			map
 		})
+}
+
+// unnecessary variables, word_count is more concise
+fn word_count_via_reference(text: String) -> HashMap<String, u32> {
+	let mut map = HashMap::new();
+	let words = text
+		.split_whitespace()
+		.map(|w| w.to_lowercase());
+	for word in words {
+		let count = map.entry(word).or_insert(0);
+		*count += 1;
+	}
+	map
 }
