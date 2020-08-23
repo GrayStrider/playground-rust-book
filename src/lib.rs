@@ -5,7 +5,8 @@
 #![allow(dead_code)]
 #![allow(unused_variables)]
 
-mod bindings;
+mod basics;
+
 mod funcs;
 mod primitives;
 mod comments;
