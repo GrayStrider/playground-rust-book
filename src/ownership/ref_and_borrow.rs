@@ -15,7 +15,7 @@ fn hand_back() {
 }
 
 fn using_references() {
-	fn foo(_v1: &Vec<i32>, _v2: &Vec<i32>) -> i32 {
+	fn foo(_v1: &[i32], _v2: &[i32]) -> i32 {
 		// do stuff with _v1 and _v2
 		
 		// return the _answer

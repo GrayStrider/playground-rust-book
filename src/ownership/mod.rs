@@ -34,7 +34,7 @@ fn baz(string: &str) -> &str {
 }
 
 fn increment(mut num: isize) -> isize {
-	num = num + 1;
+	num += 1;
 	num
 }
 

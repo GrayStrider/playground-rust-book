@@ -1,11 +1,11 @@
 // loops
 #[allow(unreachable_code)]
 fn loop_() {
-	loop {
-		println!("only once");
-		break;
-		continue; // standart
-	}
+	// loop {
+	// 	println!("only once");
+	// 	break;
+	// 	continue; // standart
+	// }
 	
 	fn returns() {
 		let mut counter = 0;

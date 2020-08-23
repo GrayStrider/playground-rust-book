@@ -4,7 +4,8 @@ mod tests {
 
 	#[test]
 	fn stub() {
-		let act = $NAME();
+		let args = "hello";
+		let act = $NAME(args);
 		let exp = false;
 		assert_eq!(act, exp);
 	}

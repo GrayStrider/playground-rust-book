@@ -2,7 +2,7 @@
 #![allow(unused_variables)]
 
 use std::collections::HashMap;
-use std::collections::hash_map::RandomState;
+
 
 fn main() {
 	let mut scores = HashMap::new();

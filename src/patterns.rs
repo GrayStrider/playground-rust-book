@@ -13,9 +13,8 @@ fn shadowing() {
 	let x = 1;
 	let c = 'c';
 	
-	match c {
-		x => println!("x: {} c: {}", x, c),
-	}
+	let x = c;
+	println!("x: {} c: {}", x, c);
 	
 	println!("x: {}", x)
 	// x: c c: c
@@ -44,21 +43,17 @@ fn destructuring() {
 	
 	let origin = Point { x: 0, y: 0 };
 	
-	match origin {
-		Point { x, y } => println!("({},{})", x, y),
-	}
+	let Point { x, y } = origin;
+	println!("({},{})", x, y);
 	
-	match origin { // with names
-		Point { x: x1, y: y1 } => println!("({},{})", x1, y1),
-	}
+	let Point { x: x1, y: y1 } = origin;
+	println!("({},{})", x1, y1);
 	
-	match origin { // partial
-		Point { x, .. } => println!("x is {}", x),
-	}
+	let Point { x, .. } = origin;
+	println!("x is {}", x);
 	
-	match origin {
-		Point { y, .. } => println!("y is {}", y),
-	}
+	let Point { y, .. } = origin;
+	println!("y is {}", y);
 	
 	// This ‘destructuring’ behavior works on any
 	// compound data type, like tuples or enums.
@@ -93,16 +88,14 @@ fn ignoring() {
 fn reference() {
 	let x = 5;
 	
-	match x {
-		ref r => println!("Got a reference to {}", r),
-	}
+	let r = &x;
+	println!("Got a reference to {}", r);
 	
 	fn mutable() {
 		let mut x = 5;
 		
-		match x {
-			ref mut mr => println!("Got a mutable reference to {}", mr),
-		}
+		let mr = &mut x;
+		println!("Got a mutable reference to {}", mr);
 	}
 }
 
@@ -139,9 +132,7 @@ fn bindings() {
 		
 		let name = "Steve".to_string();
 		let x: Option<Person> = Some(Person { name: Some(name) });
-		match x {
-			Some(Person { name: ref a @ Some(_), .. }) => println!("{:?}", a),
-			_ => {}
-		}
+		if let Some(Person { name: ref a @ Some(_), .. }) =
+		x { println!("{:?}", a) }
 	}
 }

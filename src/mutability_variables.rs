@@ -23,7 +23,7 @@ fn interior() {
 	use std::sync::Arc;
 	
 	let x = Arc::new(5);
-	let _y = x.clone();
+	let _y = x;
 	
 	// the mutation is entirely contained inside the structure itself
 }

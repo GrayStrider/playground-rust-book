@@ -12,7 +12,7 @@ fn main() {
 	let s1 = sf("Hello, ");
 	let s2 = sf("world!");
 	let mut s3 = s1 + &s2; // note s1 has been moved here and can no longer be used
-	s3.extend(sf("!!!").chars());
+	s3.push_str(&sf("!!!"));
 	assert_eq!(s3, "Hello, world!!!!");
 	s3.retain(|c| c != 'o');
 	assert_eq!(s3, "Hell, wrld!!!!");
@@ -44,7 +44,7 @@ fn main() {
 
 // no support for optional arguments/overloading, builder pattern
 // is a recommended verbose option
-fn first_word<'a>(s: &'a String, separator: &'a str) -> Option<&'a str> {
+fn first_word<'a>(s: &'a str, separator: &'a str) -> Option<&'a str> {
 	let res: Vec<&str> =
 		s.split(separator).collect();
 	res.get(0).copied()
