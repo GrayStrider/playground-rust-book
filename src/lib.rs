@@ -16,7 +16,6 @@ mod enums;
 mod patterns;
 
 mod ownership;
-mod slicing;
 
 mod option;
 mod std;

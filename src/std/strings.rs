@@ -16,6 +16,7 @@ fn main() {
 	assert_eq!(s3, "Hello, world!!!!");
 	s3.retain(|c| c != 'o');
 	assert_eq!(s3, "Hell, wrld!!!!");
+	assert_eq!(first_word(&s3, ", "), Some("Hell"));
 	// format
 	let s = format!("{}-{}-{}", sf("tic"), sf("tac"), sf("toe"));
 	
@@ -39,6 +40,14 @@ fn main() {
 	let word = "नमस्ते";
 	word.chars();
 	word.bytes();
+}
+
+// no support for optional arguments/overloading, builder pattern
+// is a recommended verbose option
+fn first_word<'a>(s: &'a String, separator: &'a str) -> Option<&'a str> {
+	let res: Vec<&str> =
+		s.split(separator).collect();
+	res.get(0).copied()
 }
 
 fn sf(s: &str) -> String { String::from(s) }
