@@ -23,14 +23,13 @@ fn primitives() {
 	
 	x = y;
 	
+	println!("{:#?}", x); // (2, 3)
 	
-	// destructuring
-	let (x, y, z) = (1, 2, 3);
+
 	
-	
-	// functions
-	fn foo(x: i32) -> i32 { x }
-	
-	let x: fn(i32) -> i32 = foo;
-	
+}
+
+
+fn main() {
+	primitives()
 }

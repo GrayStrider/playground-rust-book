@@ -1,4 +1,15 @@
 fn main() {
+	
+	// functions
+	fn foo(x: i32) -> i32 { x }
+	let x: fn(i32) -> i32 = foo;
+	// closure (arrow fn, anonimous fn)
+	let x = |x: i32| x;
+	// currying
+	let adder = |to_add: i32| move |add_to: i32| to_add + add_to;
+	let plus_one = adder(1);
+	let three = plus_one(2);
+	
 	// patterns
 	let (x, y) = (1, 2);
 	
@@ -16,10 +27,10 @@ fn main() {
 		let x = 3; // 3
 	}
 	x; // 2
-}
-
-
-fn d() {
+	
+	// destructuring
+	let (x, y, z) = (1, 'c', 3.9);
+	
 	fn comments() {
 		
 		/// Adds one to the number given.
@@ -42,6 +53,5 @@ fn d() {
 // / HTML documentation from these doc comments,
 // / and also to run the code examples as tests!
 	}
-	
 }
 
