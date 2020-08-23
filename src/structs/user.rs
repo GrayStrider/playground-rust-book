@@ -1,16 +1,3 @@
-struct User {
-	username: String,
-	email: String,
-	// String: we want instances of this struct to own
-	// all of its data and for that data to be valid
-	// for as long as the entire struct is valid
-	sign_in_count: u64,
-	active: bool,
-}
-
-struct Color(i32, i32, i32);
-struct Point(i32, i32, i32);
-
 fn main() {
 	let _user1 = User {
 		email: String::from("someone@example.com"),
@@ -33,8 +20,23 @@ fn main() {
 		username: String::from("anotherusername567"),
 		..user1
 	};
-	
 }
+
+
+struct User {
+	username: String,
+	email: String,
+	// String: we want instances of this struct to own
+	// all of its data and for that data to be valid
+	// for as long as the entire struct is valid
+	sign_in_count: u64,
+	active: bool,
+}
+
+struct Color(i32, i32, i32);
+
+struct Point(i32, i32, i32);
+
 
 fn color() {
 	let black = Color(0, 0, 0);

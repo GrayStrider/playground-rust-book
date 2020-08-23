@@ -1,10 +1,7 @@
 use std::ops::RangeTo;
 
-/// By convention, structs begin with a capital letter and are camel cased
-struct Point {
-	x: i32,
-	y: i32,
-}
+mod user;
+mod rectangle;
 
 fn main() {
 	let point = Point { x: 3, y: 2 };
@@ -14,7 +11,14 @@ fn main() {
 	mutable_p.x += 2;
 }
 
-fn mut_pointers() {
+
+// By convention, structs begin with a capital letter and are camel cased
+struct Point {
+	x: i32,
+	y: i32,
+}
+
+fn mutable_pointers() {
 	struct PointRef<'a> {
 		x: &'a mut i32,
 		y: &'a mut i32,
@@ -33,27 +37,26 @@ fn mut_pointers() {
 	assert_eq!(6, point.y);
 }
 
-
-fn spread() {
+fn spread_operator() {
 	struct Point3d {
 		xy: Point,
 		z: i32,
 	}
 	
 	let point = Point { x: 3, y: 4 };
-	let _point3d = Point3d { xy: point, z: 0 };
+	let point3d = Point3d { xy: point, z: 0 };
 	
 	// rust arrays have a fixed length! use vector or convert into iterable
 	let origin = [1, 2];
-	let _new: (RangeTo<[i32; 2]>, i32) = (..origin, 3);
+	let new: (RangeTo<[i32; 2]>, i32) = (..origin, 3);
 }
 
 fn tuple_struct() {
 	struct Color(i32, i32, i32);
 	struct Point(i32, i32, i32);
 	
-	let _black = Color(0, 0, 0);
-	let _origin = Point(0, 0, 0);
+	let black = Color(0, 0, 0);
+	let origin = Point(0, 0, 0);
 	
 	// Good names are important, and while values in a tuple struct
 	// can be referenced with dot notation as well, a struct gives us
@@ -76,7 +79,7 @@ fn tuple_struct() {
 fn no_members() {
 	struct Electron;
 	
-	let _x = Electron;
+	let x = Electron;
 	
 	// Such a struct is called ‘unit-like’ because it resembles
 	// the empty tuple, (), sometimes called ‘unit’. Like a
