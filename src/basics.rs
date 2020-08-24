@@ -60,7 +60,7 @@ fn main() {
 	// shadowing, scope
 	let x = 2;
 	{ let x = 3; }
-	x; // 2
+	// x; // 2
 	
 	// destructuring
 	let (x, y, z) = (1, 'c', 3.9);
