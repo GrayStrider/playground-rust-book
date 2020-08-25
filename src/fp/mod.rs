@@ -1,5 +1,9 @@
+use std::ops::{Add, Mul};
+
+
 #[cfg(test)]
 mod tests {
+	
 	#[test]
 	// list comprehension of sorts
 	fn iterators() {
@@ -32,4 +36,37 @@ mod tests {
 			assert_eq!(case, &exp)
 		}
 	}
+	
+	#[test]
+	fn pipe_() {
+		fn times(a: u32, b: u32) -> u32{
+			a * b
+		}
+		//
+		// let add5 = add(5);
+		// let sub3 = add(-3);
+		// let double = mult(2);
+		//
+		fn add2(x: i32) -> i32 {
+			x + 2
+		}
+		
+		assert_eq!(pipe!(10 => add2), 12)
+	}
+}
+
+fn main() {
+	let adder = |x: i32| move |y: i32| x + y;
+}
+
+pub fn add<T: Add>(x: i32) -> impl Fn(i32) -> i32 {
+	move |y| x + y
+}
+
+pub fn mult<T: Mul + Copy>(x: i32) -> impl Fn(i32) -> i32 {
+	move |y| x * y
+}
+
+pub fn pipe<T>(init: i32, funcs: &[fn(i32) -> i32]) -> i32 {
+	0
 }

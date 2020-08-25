@@ -4,6 +4,10 @@
 //! functionality for building portable Rust software.
 #![allow(dead_code)]
 #![allow(unused_variables)]
+#[allow(unused_imports)]
+
+#[macro_use]
+extern crate pipeline;
 
 mod basics;
 
